@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     padding: 16,
-    paddingBottom: 24,
-    alignContent: "center",
+    // paddingBottom: 24,
+    alignItems: "center",
     justifyContent: "center",
   },
   card: {
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   inputContainer: {
-    alignSelf: 'flex-start',
+    // alignSelf: 'flex-start',
   },
   buttons: {
     flex: 1,
