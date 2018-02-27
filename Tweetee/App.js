@@ -11,7 +11,6 @@ import {
   Content, 
   Header,
   H1, 
-  // Button,
   Card,
   Text,
   CardItem,
@@ -122,7 +121,6 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   buttons: {
-    color: "#2293F7",
     flex: 1,
     alignContent: "center",
     justifyContent: "center",
