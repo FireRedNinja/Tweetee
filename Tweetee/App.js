@@ -26,7 +26,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Roboto_medium from 'native-base/Fonts/Roboto_medium.ttf';
 import { Font, AppLoading } from "expo";
 
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -38,6 +37,7 @@ export default class App extends React.Component {
   render() {
   
     return (
+<<<<<<< Updated upstream
       <Container style={[styles.headerFix, styles.container]} >
 
         <Container style={styles.logoHeader} >
@@ -128,7 +128,12 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignSelf: 'flex-start',
   },
+<<<<<<< Updated upstream
   Text: {
     fontFamily: 'Roboto_medium',
   } 
 });
+=======
+
+});
+>>>>>>> Stashed changes
