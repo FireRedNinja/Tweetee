@@ -39,13 +39,13 @@ export default class App extends React.Component {
     };
   }
 
-  onLanguage1Change(value: string) {
+  onLanguage1Change(value) {
     this.setState({
       language1: value
     });
   }
 
-  onLanguage2Change(value: string) {
+  onLanguage2Change(value) {
     this.setState({
       language2: value
     });
@@ -163,7 +163,7 @@ export default class App extends React.Component {
 
         <Container style={styles.logoHeader} >
           <Image
-            source={require('./res/images/ic_launcher-web.png')}
+            source={require('./res/images/Logo.png')}
             style={{height: 80, width: 80}}
           />
           <H1 >Tweetee</H1>
