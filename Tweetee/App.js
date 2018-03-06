@@ -25,8 +25,7 @@ import {
 import { TextInput } from 'react-native-gesture-handler';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
-
+import { Camera } from './Camera.js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -65,7 +64,7 @@ export default class App extends React.Component {
 
               <CardItem style={styles.buttonContainer}>
 
-                <Button  large primary style={styles.buttons}>
+                <Button  large primary style={styles.buttons} onClick={<Camera />}>
                   <Icon name='camera-alt' size={24} color='white'/>
                 </ Button>
 
