@@ -1,16 +1,16 @@
 import React from 'react';
-import { 
-  StyleSheet,  
+import {
+  StyleSheet,
   View,
   Image,
   ActivityIndicator,
   // Button
 } from 'react-native';
 import {
-  Container, 
-  Content, 
+  Container,
+  Content,
   Header,
-  H1, 
+  H1,
   Card,
   Text,
   CardItem,
@@ -25,6 +25,7 @@ import {
 import { TextInput } from 'react-native-gesture-handler';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import ShareMenu from 'react-native-share-menu';
 
 
 
@@ -55,7 +56,7 @@ export default class App extends React.Component {
 
           <Container style={styles.card}>
             <Card >
-              
+
               <CardItem style={styles.inputContainer}>
                 <Item floatingLabel >
                   <Label>Enter text</Label>
