@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "glasgow-2018-team-1",
+  "private_key_id": "93c1b33dff0d98a6a1c3214d123f1ae08e4cb220",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCVGwwA88lMaANy\noxjKFdZPqrmrqSE57AcZNPNQYCgQ+2qG3mkD/oYU1yOgv5zRnhqfqK0RO4Ka/Ggd\nSjr6UOjuJaorZpjSJW9Wywcypl2Utv37J8b0caYX7kmLPCw5H5IFU5HjSzUPRJxS\n8ufThloQz7OwLGTprq9ajIE4uf2Qt3OU20zFNNJVNayMsAG7TM/HIqkUebq1qFkH\nkERWOvi/PUNN/fAHwER1YhNvHL6CL13OT6GqdfAiIcfEDpYTb9SzAj/lfXHEJw6P\n4Gdo9JHcngIUg10WeWGTC+xkOHO9XVU+x//xKYXQHzlmy3mAynO3y1wXgaCB8JHP\nbMRUs76fAgMBAAECggEAEikw2sOBZtiwZXvEtDCEDEC2IVjAnvEcTY9WfMQJfUVc\nzJU1uJ0oBaJ383IDOWuGwKA8htchvvDertqbY7ZhI0iGeTIji6Ja9PkA+m6rApxl\n7lECTu8HakNwGmZiLd77hmyPCLPgquhncJmnb5XIozg5IaHL9MPTFeCmiJtBbX51\nw7asCF4wiuj2GDkDXpWYD2idhHy4vd/XZ+G/Ej5R6Av3Nid3c16UB7AYzutNC2rk\njbY/wfzq+r2Hor5BeGFL8cLZV05RRn5eZ86PXChnru7qCSPQoHcKIBjg/b4Ujzo5\np7wZI3gAug2zCW1dRNClmI0n1HQVP5HGhSYuv2HOWQKBgQDIILxifw3i3x1+Y23v\ndgu74BKEexiH3GVuVG6UujY/AO/uWwjNzXadTqomwB6PNkN8Tw8T4Yuc0KkSvNoJ\n1HXnBGIskRooE536KHs7y5V0iHWkh3siHbaTLpgBO2VlyBSZsfOLnjHPkGXSBNrS\nclobzs1PmhHwpta4JKObx69RqwKBgQC+u7iNnsGzjMCa/jG3tyZJ422WyhOv0fvn\nK416PnHTYKjM26cC22OjjP+51FSd5X/5YZJUf60Mw0DOa2MmjOe5IzhVdGfNSECo\nBS9L9jyUUnBSmjJYyeJVk8SQLQ40buoNeJGtIqoYIJSa4l7ut98oAucjU4XC39NH\n6FxQNwy63QKBgESywBhLpxenIXe+aAGYkySWIaUqoFwa8xKxlxgk5/QuvS4kP9xt\n2HbdhxkwQA1HQllMxk870HIvSqqs+2f+b86yuYS09ralLUivVsZK923+XevxufoX\nGxJhHzrlCcSrry6nYIQf9NdcqSc0FW3CZV5AWkgmClyC2RhzM1qJbIxrAoGANSmn\nwDme7gfua4UsoHN5RaERm7UJlbkmyIF4NrmPCobnpeoXfBFgjWawpMBNMZGVgRI0\nMj9AIc2Ok7qU8VrW/+CURCVlBW/9LZf8XeTtb74mtq9qFxt2bbn5UOJuEilULZsM\np8CAvqbeJOmx4kH3/nQIru0J3I58mo9mo6kkcDUCgYBiOuZ76TIpVxmrbBFTgJFE\nonipX+J8Sb2azjMzyK+CIvsy79VaJywVNGqZ9WvA/CWygW9UEL/A1RHWX/Gl7WNc\nMF18JpckGXZh9xSPfyaAq2CHtj2cVN5WfLBRMTydas1p5bj0cOw5/vGlT4nGz+rK\nkqckLgJnNg0VIlAftKY+/A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "tweeteem@glasgow-2018-team-1.iam.gserviceaccount.com",
+  "client_id": "103640179228543028825",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tweeteem%40glasgow-2018-team-1.iam.gserviceaccount.com"
+}
