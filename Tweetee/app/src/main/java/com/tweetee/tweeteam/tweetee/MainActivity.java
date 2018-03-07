@@ -12,7 +12,7 @@ import com.google.cloud.translate.Translation;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String API_KEY = "AIzaSyBWCibzBHFCDP9pQUH-vQ9V3OIRmeYIwWM";
+    private static final String API_KEY = getString(R.string.googleAPI);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
