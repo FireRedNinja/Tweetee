@@ -7,3 +7,5 @@
 /build
 /captures
 .externalNativeBuild
+Keys.txt
+**/*/res/values/secrets.xml
