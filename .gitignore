@@ -8,4 +8,4 @@
 /captures
 .externalNativeBuild
 Keys.txt
-**/*/res/values/secrets.xml
+**/*/res/values/keys.xml
