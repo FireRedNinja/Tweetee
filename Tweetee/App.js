@@ -1,58 +1,36 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
+import React, {
+  AppRegistry,
+  Component,
   Text,
   View
 } from 'react-native';
+import ShareMenu from 'react-native-share-menu';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
-type Props = {};
-export default class App extends Component<Props> {
+Class Test {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sharedText: null
+    };
+  }
+}
+  componentWillMount() {
+    var that = this;
+    ShareMenu.getSharedText((text :string) => {
+      if (text && text.length) {
+        that.setState({ sharedText: text });
+      }
+    })
+  }
+
   render() {
+    var text = this.state.sharedText;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+      <View>
+        <Text>Shared text: {text}</Text>
       </View>
     );
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+AppRegistry.registerComponent('Test', () => Test);
