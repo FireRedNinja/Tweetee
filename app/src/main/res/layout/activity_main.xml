@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -63,13 +64,17 @@
                 android:layout_height="wrap_content">
 
                 <Button
+
+                    android:id="@+id/camera"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:drawableLeft="@drawable/ic_photo_camera_black_18dp"
                     android:text="Camera"
                     android:layout_weight="1"/>
 
+
                 <Button
+
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:drawableLeft="@drawable/ic_file_upload_black_18dp"
