@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Tweetee/Tweetee.iml" filepath="$PROJECT_DIR$/Tweetee/Tweetee.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\leonr\Documents\github\Tweetee\Tweetee\app\app.iml" filepath="C:\Users\leonr\Documents\github\Tweetee\Tweetee\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twet.iml" filepath="$PROJECT_DIR$/twet.iml" />
     </modules>
   </component>
 </project>
