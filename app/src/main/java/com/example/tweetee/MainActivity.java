@@ -27,17 +27,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button cam = findViewById(R.id.camera);
-
-        cam.setOnClickListener(this);
-    }
-    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(MainActivity.this, CameraView.class));
-    }
-
-    }
-
         EditText txtView = (EditText) findViewById(R.id.txt);
         Intent receivedIntent = getIntent();
         String receivedAction = receivedIntent.getAction();
@@ -52,7 +41,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
         }
 
-        }
+        Button cam = findViewById(R.id.camera);
+
+        cam.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(MainActivity.this, CameraView.class));
+    }
 
 
 }
