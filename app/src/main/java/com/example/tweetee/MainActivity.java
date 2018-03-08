@@ -15,13 +15,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.app.AppCompatActivity;
 
+
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
+
+    EditText txtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText txtView = (EditText) findViewById(R.id.txt);
+        txtView = (EditText) findViewById(R.id.txt);
         Intent receivedIntent = getIntent();
         String receivedAction = receivedIntent.getAction();
         String receivedType = receivedIntent.getType();
@@ -29,11 +37,27 @@ public class MainActivity extends AppCompatActivity {
         if(receivedAction.equals(Intent.ACTION_SEND)){
             String receivedText = receivedIntent.getStringExtra(Intent.EXTRA_TEXT);
             if (receivedText != null) {
-                txtView.setText(receivedText.substring(receivedText.lastIndexOf("https")));
+                getsite(receivedText);
             }
         }else if(receivedAction.equals(Intent.ACTION_MAIN)) {
 
         }
+
+
+
+        }
+
+
+        public void getsite(String receivedText){
+            Ion.with(getApplicationContext())
+                .load(receivedText.substring(receivedText.lastIndexOf("https")))
+                    .asString()
+                    .setCallback(new FutureCallback<String>() {
+                        @Override
+                        public void onCompleted(Exception e, String result) {
+                            txtView.setText(result.substring(result.indexOf("<div class=\"dir-ltr\" dir=\"ltr\">")+33).split("<")[0]);
+                        }
+                    });
 
         }
 
