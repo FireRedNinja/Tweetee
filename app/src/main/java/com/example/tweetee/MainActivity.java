@@ -17,6 +17,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -31,9 +33,9 @@ import com.google.api.services.vision.v1.VisionRequestInitializer;
 import com.google.api.services.vision.v1.model.AnnotateImageRequest;
 import com.google.api.services.vision.v1.model.BatchAnnotateImagesRequest;
 import com.google.api.services.vision.v1.model.BatchAnnotateImagesResponse;
-import com.google.api.services.vision.v1.model.EntityAnnotation;
 import com.google.api.services.vision.v1.model.Feature;
 import com.google.api.services.vision.v1.model.Image;
+import com.google.api.services.vision.v1.model.TextAnnotation;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity{
     private static final int GALLERY_IMAGE_REQUEST = 1;
     public static final int CAMERA_PERMISSIONS_REQUEST = 2;
     public static final int CAMERA_IMAGE_REQUEST = 3;
-
+    EditText mImageDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-
+        mImageDetails = findViewById(R.id.txt);
     }
 
     public void startGalleryChooser() {
@@ -227,8 +229,8 @@ public class MainActivity extends AppCompatActivity{
                         // add the features we want
                         annotateImageRequest.setFeatures(new ArrayList<Feature>() {{
                             Feature labelDetection = new Feature();
-                            labelDetection.setType("LABEL_DETECTION");
-                            labelDetection.setMaxResults(10);
+                            labelDetection.setType("DOCUMENT_TEXT_DETECTION");
+                            labelDetection.setMaxResults(280);
                             add(labelDetection);
                         }});
 
@@ -253,7 +255,9 @@ public class MainActivity extends AppCompatActivity{
                 }
                 return "Cloud Vision API request failed. Check logs for details.";
             }
-
+            protected void onPostExecute(String result) {
+                mImageDetails.setText(result);
+            }
         }.execute();
     }
 
@@ -278,17 +282,11 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private String convertResponseToString(BatchAnnotateImagesResponse response) {
-        String message = "I found these things:\n\n";
+        String message="";
 
-        List<EntityAnnotation> labels = response.getResponses().get(0).getLabelAnnotations();
-        if (labels != null) {
-            for (EntityAnnotation label : labels) {
-                message += String.format(Locale.US, "%.3f: %s", label.getScore(), label.getDescription());
-                message += "\n";
-            }
-        } else {
-            message += "nothing";
-        }
+        TextAnnotation labels = response.getResponses().get(0).getFullTextAnnotation();
+
+        message += String.format(Locale.US, "%s", labels.getText());
 
         return message;
     }
