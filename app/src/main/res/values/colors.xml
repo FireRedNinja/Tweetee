@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00aced</color>
-    <color name="colorPrimaryDark">#0084b4</color>
-    <color name="colorAccent">#1dcaff</color>
+    <color name="darkBlue">#0084b4</color>
+    <color name="logoBlue">#00aced</color>
+    <color name="twitterBlue">#1dcaff</color>
+    <color name="backgroundBlue">#c0deed</color>
+    <color name="white">#ffffff</color>
 </resources>
