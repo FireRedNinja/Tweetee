@@ -1,6 +1,7 @@
 package com.example.tweetee;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,14 +15,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Handler;
 
 
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
+
+
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String API_KEY = "AIzaSyBWCibzBHFCDP9pQUH-vQ9V3OIRmeYIwWM";
+
 
     //declare text view
     EditText txtView;
@@ -30,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Handler textViewHandler = new Handler();
+        String output = "";
+
         //get text view
         txtView = (EditText) findViewById(R.id.txt);
         //set up share intent
@@ -48,6 +62,32 @@ public class MainActivity extends AppCompatActivity {
         }else if(receivedAction.equals(Intent.ACTION_MAIN)) {
 
         }
+
+        
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                TranslateOptions options = TranslateOptions.newBuilder()
+                        .setApiKey(API_KEY)
+                        .build();
+                Translate translate = options.getService();
+                final Translation translation =
+                        translate.translate("Hello World",
+                                Translate.TranslateOption.targetLanguage("de"));
+                textViewHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (txtView != null) {
+                            txtView.setText(translation.getTranslatedText()
+                                    .replace("&amp;","&")
+                                    .replace("&lt;","<")
+                                    .replace("&quot;","\""));
+                        }
+                    }
+                });
+                return null;
+            }
+        }.execute();
 
 
 
