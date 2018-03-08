@@ -54,6 +54,9 @@
                 android:layout_weight="2"
                 android:gravity="start"
                 android:inputType="textMultiLine"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="32dp"
                 android:hint="Enter text" />
 
 
@@ -63,30 +66,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
+                <ImageButton
 
                     android:id="@+id/camera"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_photo_camera_black_18dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_photo_camera_black_18dp"
                     android:text="Camera"
                     android:layout_weight="1"/>
 
 
-                <Button
-
+                <ImageButton
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_file_upload_black_18dp"
-                    android:text="Upload"
-                    android:layout_weight="1"/>
-
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_translate_black_18dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_translate_black_18dp"
                     android:text="Translate"
+                    android:layout_weight="1"
+                    
                     android:onClick="translate"/>
 
 

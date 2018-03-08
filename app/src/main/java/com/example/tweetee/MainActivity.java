@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.app.AppCompatActivity;
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity{
         } else if(receivedAction.equals(Intent.ACTION_MAIN)) {
         }
 
-        Button cam = findViewById(R.id.camera);
+        ImageButton cam = findViewById(R.id.camera);
         cam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
