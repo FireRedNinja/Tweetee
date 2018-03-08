@@ -1,6 +1,10 @@
 package com.example.tweetee;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.net.Uri;
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity{
     //declare text view
     EditText txtView;
 
-    private static final String CLOUD_VISION_API_KEY = "AIzaSyAODBlNZvNzACCDOdPaARXc71cVVvyXM5Q";
+    private static final String API_KEY = "AIzaSyAODBlNZvNzACCDOdPaARXc71cVVvyXM5Q";
     public static final String FILE_NAME = "temp.jpg";
     private static final String ANDROID_CERT_HEADER = "X-Android-Cert";
     private static final String ANDROID_PACKAGE_HEADER = "X-Android-Package";
@@ -270,7 +274,7 @@ public class MainActivity extends AppCompatActivity{
                     JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
 
                     VisionRequestInitializer requestInitializer =
-                            new VisionRequestInitializer(CLOUD_VISION_API_KEY) {
+                            new VisionRequestInitializer(API_KEY) {
                                 /**
                                  * We override this so we can inject important identifying fields into the HTTP
                                  * headers. This enables use of a restricted cloud platform API key.
