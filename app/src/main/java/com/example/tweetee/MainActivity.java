@@ -41,11 +41,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Handler textViewHandler = new Handler();
+
         String output = "";
 
         //get text view
         txtView = (EditText) findViewById(R.id.txt);
+
         //set up share intent
         Intent receivedIntent = getIntent();
         String receivedAction = receivedIntent.getAction();
@@ -62,35 +63,6 @@ public class MainActivity extends AppCompatActivity {
         }else if(receivedAction.equals(Intent.ACTION_MAIN)) {
 
         }
-
-        
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... params) {
-                TranslateOptions options = TranslateOptions.newBuilder()
-                        .setApiKey(API_KEY)
-                        .build();
-                Translate translate = options.getService();
-                final Translation translation =
-                        translate.translate("Hello World",
-                                Translate.TranslateOption.targetLanguage("de"));
-                textViewHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (txtView != null) {
-                            txtView.setText(translation.getTranslatedText()
-                                    .replace("&amp;","&")
-                                    .replace("&lt;","<")
-                                    .replace("&quot;","\""));
-                        }
-                    }
-                });
-                return null;
-            }
-        }.execute();
-
-
-
     }
 
 
@@ -109,7 +81,38 @@ public class MainActivity extends AppCompatActivity {
                     txtView.setText(result.substring(result.indexOf("<div class=\"dir-ltr\" dir=\"ltr\">")+33).split("<")[0]);
                 }
             });
+    }
 
+
+    public void translate(View view) {
+        final Handler textViewHandler = new Handler();
+        txtView = (EditText) findViewById(R.id.txt);
+
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                TranslateOptions options = TranslateOptions.newBuilder()
+                        .setApiKey(API_KEY)
+                        .build();
+                Translate translate = options.getService();
+                final Translation translation =
+                        translate.translate(txtView.getText().toString(),
+                                Translate.TranslateOption.targetLanguage("en"));
+                textViewHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (txtView != null) {
+                            txtView.setText(translation.getTranslatedText()
+                                    .replace("&amp;","&")
+                                    .replace("&lt;","<")
+                                    .replace("&quot;","\"")
+                                    .replace("&#39;", "'"));
+                        }
+                    }
+                });
+                return null;
+            }
+        }.execute();
     }
 
 
