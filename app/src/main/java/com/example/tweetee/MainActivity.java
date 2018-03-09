@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
 
+//        System.out.println(Locale.getDefault().getDisplayLanguage());
+//        Log.v(Locale.getDefault().Language(), "User Language");
 
         String output = "";
 
@@ -246,7 +248,7 @@ public class MainActivity extends AppCompatActivity{
                 Translate translate = options.getService();
                 final Translation translation =
                         translate.translate(txtView.getText().toString(),
-                                Translate.TranslateOption.targetLanguage("en"));
+                                Translate.TranslateOption.targetLanguage(Locale.getDefault().getLanguage()));
                 textViewHandler.post(new Runnable() {
                     @Override
                     public void run() {
