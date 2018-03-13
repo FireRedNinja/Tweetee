@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity{
     //declare text view
     EditText txtView;
 
-    private static final String API_KEY = "AIzaSyAODBlNZvNzACCDOdPaARXc71cVVvyXM5Q";
+    private static final String API_KEY = "";
     public static final String FILE_NAME = "temp.jpg";
     private static final String ANDROID_CERT_HEADER = "X-Android-Cert";
     private static final String ANDROID_PACKAGE_HEADER = "X-Android-Package";
